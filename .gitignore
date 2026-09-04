@@ -1,0 +1,72 @@
+# ---------------------------------------------------------------------------
+# Dependencies
+# ---------------------------------------------------------------------------
+node_modules/
+
+# package-lock.json is intentionally NOT ignored: it pins zod/typescript and
+# should be committed.
+
+# ---------------------------------------------------------------------------
+# Secrets
+#
+# This server reads a real OpenCode credential from OPENCODE_API_KEY. Never
+# commit a filled-in env file. .env.example is the template and IS tracked.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# ---------------------------------------------------------------------------
+# Build and typecheck output
+# ---------------------------------------------------------------------------
+dist/
+build/
+*.tsbuildinfo
+
+# ---------------------------------------------------------------------------
+# Test and coverage output
+# ---------------------------------------------------------------------------
+coverage/
+.nyc_output/
+*.lcov
+
+# ---------------------------------------------------------------------------
+# Logs and crash reports
+# ---------------------------------------------------------------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+report.*.json
+.node_repl_history
+
+# ---------------------------------------------------------------------------
+# Caches
+# ---------------------------------------------------------------------------
+.cache/
+.npm/
+.eslintcache
+
+# ---------------------------------------------------------------------------
+# Research checkout of the OpenCode sources.
+#
+# ~55 MB, not part of the build. Every `upstream-opencode/...:NNN` reference in
+# the README and in the source comments points into it. Re-create with:
+#   git clone --filter=blob:none https://github.com/anomalyco/opencode.git upstream-opencode
+#   cd upstream-opencode && git checkout dev -- packages
+# ---------------------------------------------------------------------------
+upstream-opencode/
+
+# ---------------------------------------------------------------------------
+# Editors
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---------------------------------------------------------------------------
+# OS
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db

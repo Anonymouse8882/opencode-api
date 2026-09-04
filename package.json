@@ -1,0 +1,18 @@
+{
+  "name": "opencode-free-api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OpenAI-compatible API server in front of the OpenCode Zen gateway's free models",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node --experimental-strip-types src/index.ts",
+    "dev": "node --watch --experimental-strip-types src/index.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --experimental-strip-types --test test/*.test.ts",
+    "test:e2e": "OPENCODE_E2E=1 node --experimental-strip-types --test test/e2e.test.ts"
+  },
+  "dependencies": { "zod": "^3.25.76" },
+  "devDependencies": { "@types/node": "^24.0.0", "typescript": "^5.9.3" }
+}
